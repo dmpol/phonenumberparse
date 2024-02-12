@@ -5,13 +5,13 @@ import (
 )
 
 func TestParse(t *testing.T) {
-	phoneNumber := "8(123)4567890"
-	prefix := 1
-	result := "71234567890"
+	phoneNumber := "8-(900)-456-78-90"
+	prefix := 3
+	result := "+79004567890"
 
 	resFunc, err := Parse(phoneNumber, prefix)
 	if err != nil {
-		t.Errorf("Ошибка в функции")
+		t.Errorf("%s", err)
 	}
 
 	if resFunc != result {
